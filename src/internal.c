@@ -14753,7 +14753,7 @@ int ProcessPeerCerts(WOLFSSL* ssl, byte* input, word32* inOutIdx,
                 ssl->options.havePeerCert = 1;
             #if !defined(NO_WOLFSSL_CLIENT) && !defined(NO_RSA)
                 if (ssl->options.side == WOLFSSL_CLIENT_END &&
-                    ssl->specs.sig_algo == rsa_kea) {
+                    ssl->specs.kea == rsa_kea) {
                     /* CLIENT: No ServerKeyExchange message sent by server. */
                     ssl->options.peerAuthGood = 1;
                 }
